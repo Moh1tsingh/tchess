@@ -1,0 +1,50 @@
+{
+  "name": "tchess",
+  "version": "0.1.0",
+  "description": "Keyboard-driven TUI chess client for Lichess",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "tchess": "./dist/index.js"
+  },
+  "scripts": {
+    "dev": "tsx src/index.tsx",
+    "dev:board": "tsx src/index.tsx --dev-board",
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "keywords": [
+    "chess",
+    "lichess",
+    "tui",
+    "cli",
+    "ink",
+    "terminal"
+  ],
+  "dependencies": {
+    "chess.js": "^1.0.0",
+    "ctx-switch": "^2.0.7",
+    "ink": "^5.0.1",
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "@types/react": "^18.3.3",
+    "ink-testing-library": "^4.0.0",
+    "tsup": "^8.2.4",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
