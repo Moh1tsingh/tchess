@@ -1,9 +1,17 @@
 {
-  "name": "tchess",
+  "name": "term-chess",
   "version": "0.1.0",
-  "description": "Keyboard-driven TUI chess client for Lichess",
+  "description": "Play Lichess from your terminal",
   "license": "MIT",
   "type": "module",
+  "homepage": "https://github.com/Moh1tsingh/tchess#readme",
+  "bugs": {
+    "url": "https://github.com/Moh1tsingh/tchess/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moh1tsingh/tchess.git"
+  },
   "files": [
     "dist",
     "README.md",

@@ -2,7 +2,7 @@
 
 Keyboard-driven TUI chess client for Lichess, built with Ink and `chess.js`.
 
-`tchess` is a terminal-first client for seeking and playing real games on Lichess without leaving your shell. It includes a local dev board mode so UI work can be tested without starting a live match every time.
+`tchess` is a terminal-first client for seeking and playing real games on Lichess without leaving your shell.
 
 ## Features
 
@@ -11,7 +11,6 @@ Keyboard-driven TUI chess client for Lichess, built with Ink and `chess.js`.
 - Real-time board and clock sync from the Lichess Board API
 - Keyboard navigation for piece selection and moves
 - Promotion picker, resign, and draw offer actions
-- Dev board mode for local UI iteration without a live game
 
 ## Requirements
 
@@ -20,10 +19,16 @@ Keyboard-driven TUI chess client for Lichess, built with Ink and `chess.js`.
 
 ## Install
 
-After publish:
+Published package name:
 
 ```bash
-npm install -g tchess
+term-chess
+```
+
+Install globally:
+
+```bash
+npm install -g term-chess
 ```
 
 Then run:
@@ -35,7 +40,7 @@ tchess
 You can also run it without a global install:
 
 ```bash
-npx tchess
+npx term-chess
 ```
 
 ## First Run
@@ -75,7 +80,7 @@ Promotion mode:
 - `Enter`: confirm
 - `Esc`: cancel
 
-## Development
+## Local Setup
 
 Install dependencies:
 
@@ -83,13 +88,30 @@ Install dependencies:
 npm install
 ```
 
-Run the app:
+Run the app locally:
 
 ```bash
 npm run dev
 ```
 
-Run the local dev board:
+Run checks:
+
+```bash
+npm test
+npm run typecheck
+npm run build
+```
+
+## Contributing
+
+If you want to contribute:
+
+1. Fork the repo.
+2. Create a branch for your change.
+3. Run the local checks before opening a PR.
+4. Include screenshots or terminal recordings for UI/layout changes.
+
+For UI work, there is also a local dev board so you do not need to start a live Lichess match every time:
 
 ```bash
 npm run dev:board
@@ -101,35 +123,6 @@ Dev board shortcuts:
 - `Ctrl-P`: switch preset
 - `Ctrl-O`: flip orientation
 
-Checks:
-
-```bash
-npm test
-npm run typecheck
-npm run build
-```
-
-## Publish
-
-Before publishing:
-
-```bash
-npm run prepublishOnly
-```
-
-Dry-run the package contents:
-
-```bash
-npm pack
-```
-
-Publish:
-
-```bash
-npm publish
-```
-
 ## Notes
 
 - The terminal font matters. Some fonts render filled Unicode black chess pieces poorly, so `tchess` uses a stable glyph rendering strategy tuned for terminal compatibility.
-- Terminal resizing is supported during a game; the board layout recalculates automatically.
